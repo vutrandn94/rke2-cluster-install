@@ -1,0 +1,105 @@
+### RKE2 NOTE ###
+
+
+## Set worker node role
+kubectl label noderke2-worker01 node-role.kubernetes.io/worker=worker
+
+
+root@rke2-master01:~# cat /etc/rancher/rke2/config.yaml 
+token: "d36a93c9-42dd-4ff4-a56d-34063b4c1851"
+tls-san:
+  - "rke2-master01"
+  - "rke2-master02"
+  - "rke2-master03"
+node-taint:
+  - "CriticalAddonsOnly=true:NoExecute"
+write-kubeconfig-mode: "0644"
+#disable:
+#  - rke2-ingress-nginx
+cni: "calico"
+kube-apiserver-arg:
+  - "feature-gates=InPlacePodVerticalScaling=true"
+
+
+
+root@rke2-worker03:/home/ubuntu# cat /etc/rancher/rke2/config.yaml 
+server: "https://rke2-master01:9345"
+token: "K10e5d0c8f545ba8779bd4dae9d0979facc500bc4143abe967ced19a6a54672915e::server:d36a93c9-42dd-4ff4-a56d-34063b4c1851"
+node-label:
+  - "node.kubernetes.io/role=worker"
+
+
+
+
+
+### CHECK ETCD CLUSTER ###
+etcdctl --cacert=/var/lib/rancher/rke2/server/tls/etcd/server-ca.crt --cert=/var/lib/rancher/rke2/server/tls/etcd/server-client.crt --key=/var/lib/rancher/rke2/server/tls/etcd/server-client.key --endpoints=https://127.0.0.1:2379 endpoint health
+etcdctl --cacert=/var/lib/rancher/rke2/server/tls/etcd/server-ca.crt --cert=/var/lib/rancher/rke2/server/tls/etcd/server-client.crt --key=/var/lib/rancher/rke2/server/tls/etcd/server-client.key --endpoints=https://127.0.0.1:2379 member list
+
+
+
+apiVersion: v1
+kind: Pod
+metadata:
+  name: my-pod
+spec:
+  tolerations:
+  - key: "CriticalAddonsOnly"
+    operator: "Equal"
+    value: "true"
+    effect: "NoExecute"
+  containers:
+  - name: my-container
+    image: nginx
+
+
+### INSTALL INGRESS ###
+helm install ingress-nginx ingress-nginx/ingress-nginx \
+  --namespace ingress-nginx --create-namespace \
+  --set controller.service.enabled=false \
+  --set controller.kind=DaemonSet \
+  --set controller.ingressClass=nginx \
+  --set controller.ingressClassResource.name=nginx \
+  --set controller.ingressClassResource.default=true \
+  --set controller.hostPort.enabled=true \
+  --set controller.hostPort.ports.http=80 \
+  --set controller.hostPort.ports.https=443
+  
+kubectl edit daemonset.apps/ingress-nginx-controller -n ingress-nginx
+---
+...
+spec:
+  tolerations:
+  - key: "CriticalAddonsOnly"
+    operator: "Equal"
+    value: "true"
+    effect: "NoExecute"
+  containers:
+  ...
+
+
+### INSTALL CERTMANAGER ###
+kubectl apply --validate=false -f https://github.com/cert-manager/cert-manager/releases/download/v1.17.1/cert-manager.yaml
+
+
+### INSTALL RANCHERUI ###
+kubectl apply --validate=false -f https://github.com/cert-manager/cert-manager/releases/download/v1.17.1/cert-manager.yaml
+helm install rancher rancher-stable/rancher \
+  --namespace cattle-system \
+  --create-namespace \
+  --set ingress.enabled=false \
+  --set service.type=NodePort \
+  --set replicas=1
+
+kubectl get secret --namespace cattle-system bootstrap-secret -o go-template='{{.data.bootstrapPassword|base64decode}}{{ "\n" }}'
+
+
+### REMOVE 1 NODE DOWN ###
+kubectl drain --ignore-daemonsets <NODE_NAME> --force --grace-period=0
+
+kubectl cordon <NODE_NAME>
+
+kubectl delete node <NODE_NAME>
+
+### Check CA + Cert Expire ###
+openssl x509 -noout -text -in 'cerfile.cer';
