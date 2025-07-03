@@ -47,9 +47,18 @@ debug: false
 # vi /etc/sysctl.conf
 ---
 net.ipv4.ip_forward=1
-net.ipv6.conf.all.disable_ipv6=1
-net.ipv6.conf.default.disable_ipv6=1
-net.ipv6.conf.lo.disable_ipv6=1
+kernel.randomize_va_space=2
+fs.suid_dumpable=0
+kernel.keys.root_maxbytes=25000000
+kernel.keys.root_maxkeys=1000000
+kernel.panic=10
+kernel.panic_on_oops=1
+vm.overcommit_memory=1
+vm.panic_on_oom=0
+net.ipv4.ip_local_reserved_ports=30000-32767
+net.bridge.bridge-nf-call-iptables=1
+net.bridge.bridge-nf-call-arptables=1
+net.bridge.bridge-nf-call-ip6tables=1
 
 # sysctl -p
 ```
