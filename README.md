@@ -1,4 +1,4 @@
-# RKE2 All-In-One
+# RKE2 All-In-One (--proxy-mode=iptables)
 
 | Use case | Tutorial file | 
 | :--- | :--- |
