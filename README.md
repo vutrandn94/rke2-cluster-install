@@ -1,8 +1,9 @@
-# RKE2 All-In-One (--proxy-mode=iptables)
+# RKE2 All-In-One
 
 | Use case | Tutorial file | 
 | :--- | :--- |
-| Deploy new cluster | install-rancher.md |
+| Deploy new cluster (--proxy-mode=iptables) | install-cluster.md |
+| Deploy new cluster (--proxy-mode=ipvs) | install-cluster-ipvs.md |
 | Add worker node | add-worker-node.md |
 | CA, client/server certificate rotate | cert-management.md |
 | Install Nginx ingress  | install-ingress-nginx.md |
