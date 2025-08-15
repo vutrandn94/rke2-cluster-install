@@ -30,7 +30,7 @@
 ## Install & pre-config on all master nodes
 **Change default values system limit**
 ```
-vi /etc/systemd/system.conf
+# vi /etc/systemd/system.conf
 ---
 DefaultLimitNOFILE=65000
 DefaultLimitNPROC=65000
@@ -96,7 +96,7 @@ debug: false
 ## Install & pre-config on all worker nodes
 **Change default values system limit**
 ```
-vi /etc/systemd/system.conf
+# vi /etc/systemd/system.conf
 ---
 DefaultLimitNOFILE=65000
 DefaultLimitNPROC=65000
@@ -229,7 +229,7 @@ K10db22ba60f121623903839d71f7ad604b05b08ef2dda6d68b7034104aa308d951::server:d1f9
 
 **Define "config.yaml" file**
 ```
-# vi/etc/rancher/rke2/config.yaml
+# vi /etc/rancher/rke2/config.yaml
 ---
 server: "https://master01:9345"
 token: "K10db22ba60f121623903839d71f7ad604b05b08ef2dda6d68b7034104aa308d951::server:d1f9805b444aede79f8abb0e85cda6df"
