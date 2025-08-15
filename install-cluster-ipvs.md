@@ -30,7 +30,7 @@
 ## Install & pre-config on all master nodes
 **Change default values system limit**
 ```
-vi /etc/systemd/system.conf
+# vi /etc/systemd/system.conf
 ---
 DefaultLimitNOFILE=65000
 DefaultLimitNPROC=65000
@@ -119,7 +119,7 @@ debug: false
 ## Install & pre-config on all worker nodes
 **Change default values system limit**
 ```
-vi /etc/systemd/system.conf
+# vi /etc/systemd/system.conf
 ---
 DefaultLimitNOFILE=65000
 DefaultLimitNPROC=65000
