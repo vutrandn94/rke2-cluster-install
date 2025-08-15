@@ -28,6 +28,14 @@
 172.31.47.81 worker03 
 ```
 ## Install & pre-config on all master nodes
+**Change default values system limit**
+```
+vi /etc/systemd/system.conf
+---
+DefaultLimitNOFILE=65000
+DefaultLimitNPROC=65000
+DefaultTasksMax=65000
+```
 **Config sysctl.conf**
 ```
 # vi /etc/sysctl.conf
@@ -86,6 +94,14 @@ debug: false
 ```
 
 ## Install & pre-config on all worker nodes
+**Change default values system limit**
+```
+vi /etc/systemd/system.conf
+---
+DefaultLimitNOFILE=65000
+DefaultLimitNPROC=65000
+DefaultTasksMax=65000
+```
 **Config sysctl.conf**
 ```
 # vi /etc/sysctl.conf
