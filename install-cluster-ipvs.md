@@ -366,6 +366,30 @@ c431cf24d7865       05ee3fcb86374       2 minutes ago        Running            
 d951a319510d8       46c32f22a3528       2 minutes ago        Running             kube-proxy                 0                   df679ebffb0fd       kube-proxy-master02
 ```
 
+**Check IVPS route table**
+```
+# ipvsadm -L
+IP Virtual Server version 1.2.1 (size=4096)
+Prot LocalAddress:Port Scheduler Flags
+  -> RemoteAddress:Port           Forward Weight ActiveConn InActConn
+TCP  ip-10-45-0-1.ap-southeast-1. rr
+  -> master02:6443                Masq    1      1          0         
+  -> master01:6443                Masq    1      0          0         
+  -> master03:6443                Masq    1      0          0         
+TCP  ip-10-45-0-10.ap-southeast-1 rr
+  -> ip-10-44-5-6.ap-southeast-1. Masq    1      0          0         
+  -> ip-10-44-241-66.ap-southeast Masq    1      0          0         
+TCP  ip-10-45-31-132.ap-southeast rr
+  -> worker02:5473                Masq    1      0          0         
+  -> worker01:5473                Masq    1      0          0         
+  -> worker03:5473                Masq    1      0          0         
+TCP  ip-10-45-169-118.ap-southeas rr
+  -> ip-10-44-5-7.ap-southeast-1. Masq    1      0          0         
+UDP  ip-10-45-0-10.ap-southeast-1 rr
+  -> ip-10-44-5-6.ap-southeast-1. Masq    1      0          0         
+  -> ip-10-44-241-66.ap-southeast Masq    1      0          0 
+```
+
 **Copy kubeconfig context to "~/.kube"**
 ```
 # cp /etc/rancher/rke2/rke2.yaml ~/.kube/config
