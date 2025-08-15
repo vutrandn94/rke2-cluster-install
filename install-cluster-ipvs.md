@@ -28,7 +28,7 @@
 172.31.41.123 worker03 
 ```
 ## Install & pre-config on all master nodes
-**Chane default values system limit**
+**Change default values system limit**
 ```
 vi /etc/systemd/system.conf
 ---
@@ -117,7 +117,7 @@ debug: false
 ```
 
 ## Install & pre-config on all worker nodes
-**Chane default values system limit**
+**Change default values system limit**
 ```
 vi /etc/systemd/system.conf
 ---
