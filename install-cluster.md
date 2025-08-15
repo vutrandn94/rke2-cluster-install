@@ -1,4 +1,7 @@
-# RKE2 Cluster Install
+# RKE2 Cluster Install (--proxy-mode=iptables)
+> [!TIP]
+> Suitable for infrastructure < 500 services
+
 ## Lab info (3 master, 3 worker)
 | Hostname | IP Address | OS | Role | RKE Version |
 | :--- | :--- | :--- | :--- | :--- |
