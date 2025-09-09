@@ -2,12 +2,12 @@
 
 | Use case | Tutorial file | 
 | :--- | :--- |
-| Deploy new cluster (--proxy-mode=iptables) | install-cluster.md |
-| Deploy new cluster (--proxy-mode=ipvs) | install-cluster-ipvs.md |
-| Add worker node | add-worker-node.md |
-| CA, client/server certificate rotate | cert-management.md |
-| Install Nginx ingress  | install-ingress-nginx.md |
-| Install Rancher | install-rancher.md |
-| Remove node from cluster | remove-node.md |
-| Deploy dynamic NFS provisioning | deploy-dynamic-nfs-provisioning.md |
-| Check cluster node certificate expire | check-cert.sh |
+| Deploy new cluster (--proxy-mode=iptables) | [install-cluster.md](https://github.com/vutrandn94/rke2-cluster-install/blob/main/install-cluster.md) |
+| Deploy new cluster (--proxy-mode=ipvs) | [install-cluster-ipvs.md](https://github.com/vutrandn94/rke2-cluster-install/blob/main/install-cluster-ipvs.md) |
+| Add worker node | [add-worker-node.md](https://github.com/vutrandn94/rke2-cluster-install/blob/main/add-worker-node.md) |
+| CA, client/server certificate rotate | [cert-management.md](https://github.com/vutrandn94/rke2-cluster-install/blob/main/cert-management.md) |
+| Install Nginx ingress  | [install-ingress-nginx.md](https://github.com/vutrandn94/rke2-cluster-install/blob/main/install-ingress-nginx.md) |
+| Install Rancher | [install-rancher.md](https://github.com/vutrandn94/rke2-cluster-install/blob/main/install-rancher.md) |
+| Remove node from cluster | [remove-node.md](https://github.com/vutrandn94/rke2-cluster-install/blob/main/remove-node.md) |
+| Deploy dynamic NFS provisioning | [deploy-dynamic-nfs-provisioning.md](https://github.com/vutrandn94/rke2-cluster-install/blob/main/deploy-dynamic-nfs-provisioning.md) |
+| Check cluster node certificate expire | [check-cert.sh](https://github.com/vutrandn94/rke2-cluster-install/blob/main/check-cert.sh) |
