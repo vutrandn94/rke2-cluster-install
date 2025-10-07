@@ -53,6 +53,8 @@ net.ipv4.ip_local_reserved_ports=30000-32767
 net.bridge.bridge-nf-call-iptables=1
 net.bridge.bridge-nf-call-arptables=1
 net.bridge.bridge-nf-call-ip6tables=1
+fs.inotify.max_user_watches=524288
+fs.inotify.max_user_instances=1024
 
 # sysctl -p
 ```
@@ -119,6 +121,8 @@ net.ipv4.ip_local_reserved_ports=30000-32767
 net.bridge.bridge-nf-call-iptables=1
 net.bridge.bridge-nf-call-arptables=1
 net.bridge.bridge-nf-call-ip6tables=1
+fs.inotify.max_user_watches=524288
+fs.inotify.max_user_instances=1024
 
 # sysctl -p
 ```
