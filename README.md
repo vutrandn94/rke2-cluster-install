@@ -11,3 +11,5 @@
 | Remove node from cluster | [remove-node.md](https://github.com/vutrandn94/rke2-cluster-install/blob/main/remove-node.md) |
 | Deploy dynamic NFS provisioning | [deploy-dynamic-nfs-provisioning.md](https://github.com/vutrandn94/rke2-cluster-install/blob/main/deploy-dynamic-nfs-provisioning.md) |
 | Check cluster node certificate expire | [check-cert.sh](https://github.com/vutrandn94/rke2-cluster-install/blob/main/check-cert.sh) |
+| Check cluster node certificate expire | [check-cert.sh](https://github.com/vutrandn94/rke2-cluster-install/blob/main/check-cert.sh) |
+| Install nerctl and set config to interact with image containerd (like as docker) | [install-nerctl.md](https://github.com/vutrandn94/rke2-cluster-install/blob/main/install-nerctl.md) |
