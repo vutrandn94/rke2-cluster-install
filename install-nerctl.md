@@ -29,7 +29,6 @@ address = "/var/run/k3s/containerd/containerd.sock"
 CONTAINER ID    IMAGE                                                                                                               COMMAND                   CREATED         STATUS    PORTS    NAMES
 0e2a1cb8a007    docker.io/bitnami/mongodb:8.0.9-debian-12-r2                                                                        "/scripts/setup.sh"       9 days ago      Up                 k8s://common/mongodb-test-0/mongodb
 f056597258dc    docker.io/rancher/mirrored-pause:3.6                                                                                "/pause"                  9 days ago      Up                 k8s://common/mongodb-test-0
-root@worker03:/home/vnpt# nerdctl ps | grep "mongo\|kafka"
 146c145c9086    docker.io/bitnami/kafka:4.0.0-debian-12-r5                                                                          "/opt/bitnami/script…"    9 days ago      Up                 k8s://common/kafka-external-controller-2/kafka
 5db8403c2c02    docker.io/bitnami/kafka:4.0.0-debian-12-r5                                                                          "/opt/bitnami/script…"    9 days ago      Up                 k8s://common/kafka-notification-controller-2/kafka
 e43437e09b96    docker.io/bitnami/kafka:4.0.0-debian-12-r5                                                                          "/opt/bitnami/script…"    9 days ago      Up                 k8s://common/kafka-external-broker-3/kafka
