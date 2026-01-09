@@ -2,6 +2,10 @@
 > [!NOTE]
 > This turtorial only support for OS Ubuntu 22.04 and support for RKE2 versions 1.29 — 1.33. Referal for another OS and another RKE2 version at: https://docs.rke2.io/add-ons/gpu_operators & https://docs.nvidia.com/datacenter/cloud-native/gpu-operator/latest/index.html
 
+## Menu
+- [Lab info](lab-info)
+- [Host OS requirements](host-os-requirements)
+- [Prepare NVIDIA kernel drivers & libraries (Perform on all GPU worker nodes)](prepare-nvidia-kernel-drivers--libraries-perform-on-all-gpu-worker-nodes)
 
 ## Lab info
 | Hostname | IP Address | OS | Role | RKE Version | GPU | Taint |
