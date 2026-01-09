@@ -6,8 +6,7 @@
 - [Lab info](#lab-info)
 - [Host OS requirements](#host-os-requirements)
 - [Prepare NVIDIA kernel drivers & libraries (Perform on all GPU worker nodes)](#prepare-nvidia-kernel-drivers--libraries-perform-on-all-gpu-worker-nodes)
-  - [Option 1: Recommend first choice (Ubuntu will auto detect and find available NVIDIA kernel drivers & libraries)](option-1--recommend-first-choice-ubuntu-will-auto-detect-and-find-available-nvidia-kernel-drivers--libraries)
-  - [Option 2: Only if option 1 can't complete success](#option-2--only-if-option-1-can't-complete-success)
+- [Verify kernel driver and & libraries was correctly installed after reboot (Perform on all GPU worker nodes)](verify-kernel-driver-and--libraries-was-correctly-installed-after-reboot--perform-on-all-gpu-worker-nodes)
 ## Lab info
 | Hostname | IP Address | OS | Role | RKE Version | GPU | Taint |
 | :--- | :--- | :--- | :--- | :--- | :--- | :--- |
