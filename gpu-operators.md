@@ -50,6 +50,8 @@
        resources: iomemory:200-1ff iomemory:280-27f irq:10 memory:fc000000-fcffffff memory:2000000000-27ffffffff memory:2800000000-2801ffffff
 ```
 
+![GPU Display](GPU.png)
+
 ## Prepare NVIDIA kernel drivers & libraries (Perform on all GPU worker nodes)
 > [!NOTE]
 > Install NVIDIA kernel drivers & libraries REQUIRE reboot server !
@@ -346,7 +348,9 @@ spec:
   containers:
     - name: cuda-container
       image: nvcr.io/nvidia/k8s/cuda-sample:nbody
-      args: ["nbody", "-gpu", "-benchmark"]
+      command:
+      - sleep
+      - "300"
       resources:
         limits:
           nvidia.com/gpu: 1
@@ -367,39 +371,38 @@ spec:
 pod/my-gpu-pod created
 
 
+# kubectl get pod my-gpu-pod
+NAME         READY   STATUS    RESTARTS   AGE
+my-gpu-pod   1/1     Running   0          31s
+
+
 # kubectl describe pod my-gpu-pod -n default
 Name:             my-gpu-pod
 Namespace:        default
 Priority:         0
 Service Account:  default
 Node:             gpu-worker-01/10.171.132.132
-Start Time:       Fri, 09 Jan 2026 15:32:40 +0700
+Start Time:       Fri, 09 Jan 2026 15:43:52 +0700
 Labels:           <none>
 Annotations:      <none>
 Status:           Running
-IP:               10.42.9.127
+IP:               10.42.9.168
 IPs:
-  IP:  10.42.9.127
+  IP:  10.42.9.168
 Containers:
   cuda-container:
-    Container ID:  containerd://514c7123226efa04119f545bd69e7b6cd65b42faad37bbf2a798b1e2bcf10d53
+    Container ID:  containerd://8c6f6bf712f2b97f3a0a29718440c1f9487366f5eca9b28dc8cf4f8dc78ef2ec
     Image:         nvcr.io/nvidia/k8s/cuda-sample:nbody
     Image ID:      nvcr.io/nvidia/k8s/cuda-sample@sha256:59261e419d6d48a772aad5bb213f9f1588fcdb042b115ceb7166c89a51f03363
     Port:          <none>
     Host Port:     <none>
-    Args:
-      nbody
-      -gpu
-      -benchmark
-    State:          Waiting
-      Reason:       CrashLoopBackOff
-    Last State:     Terminated
-      Reason:       Error
-      Exit Code:    1
-      Started:      Fri, 09 Jan 2026 15:34:19 +0700
-      Finished:     Fri, 09 Jan 2026 15:34:19 +0700
-    Ready:          False
-    Restart Count:  4
+    Command:
+      sleep
+      300
+    State:          Running
+      Started:      Fri, 09 Jan 2026 15:43:53 +0700
+    Ready:          True
+    Restart Count:  0
     Limits:
       cpu:             2
       memory:          8Gi
@@ -414,8 +417,8 @@ Conditions:
   Type                        Status
   PodReadyToStartContainers   True 
   Initialized                 True 
-  Ready                       False 
-  ContainersReady             False 
+  Ready                       True 
+  ContainersReady             True 
   PodScheduled                True 
 Volumes:                      <none>
 QoS Class:                    Burstable
@@ -423,4 +426,11 @@ Node-Selectors:               <none>
 Tolerations:                  dedicated=gpu:NoSchedule
                               node.kubernetes.io/not-ready:NoExecute op=Exists for 300s
                               node.kubernetes.io/unreachable:NoExecute op=Exists for 300s
+Events:
+  Type    Reason     Age        From               Message
+  ----    ------     ----       ----               -------
+  Normal  Scheduled  <invalid>  default-scheduler  Successfully assigned default/my-gpu-pod to gpu-worker-01
+  Normal  Pulled     <invalid>  kubelet            Container image "nvcr.io/nvidia/k8s/cuda-sample:nbody" already present on machine
+  Normal  Created    <invalid>  kubelet            Created container cuda-container
+  Normal  Started    <invalid>  kubelet            Started container cuda-container
 ```
