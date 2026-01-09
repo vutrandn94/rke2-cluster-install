@@ -11,6 +11,7 @@
   - [Perform for K8S cluster mark taint for GPU worker node - (IT'S THIS LAB)](#perform-for-k8s-cluster-mark-taint-for-gpu-worker-node---its-this-lab)
   - [Perform for K8S cluster not mark taint for GPU worker node](#perform-for-k8s-cluster-not-mark-taint-for-gpu-worker-node)
   - [Verify everything](#verify-everything)
+  - [Run 1 workload test GPU allocate](#run-1-workload-test-gpu-allocate)
 ## Lab info
 | Hostname | IP Address | OS | Role | RKE Version | GPU | Taint |
 | :--- | :--- | :--- | :--- | :--- | :--- | :--- |
