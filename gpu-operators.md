@@ -8,6 +8,7 @@
 - [Prepare NVIDIA kernel drivers & libraries (Perform on all GPU worker nodes)](#prepare-nvidia-kernel-drivers--libraries-perform-on-all-gpu-worker-nodes)
 - [Verify kernel driver and libraries was correctly installed after reboot (Perform on all GPU worker nodes)](#verify-kernel-driver--libraries-was-correctly-installed-after-reboot-perform-on-all-gpu-worker-nodes)
 - [Deploy GPU operator (NVIDIA operator)](#deploy-gpu-operator-nvidia-operator)
+  - [Perform for K8S cluster mark taint for GPU worker node - (IT'S THIS LAB)](#perform-for-k8s-cluster-mark-taint-for-gpu-worker-node-it's-this-lab)
 ## Lab info
 | Hostname | IP Address | OS | Role | RKE Version | GPU | Taint |
 | :--- | :--- | :--- | :--- | :--- | :--- | :--- |
