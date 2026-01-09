@@ -4,18 +4,18 @@
 
 
 ## Lab info
-| Hostname | IP Address | OS | Role | RKE Version | Taint |
-| :--- | :--- | :--- | :--- | :--- | :--- |
-| master-01 | 10.171.132.117 | Ubuntu 22.04.5 LTS | master | v1.29.12+rke2r1 | node-role.kubernetes.io/etcd=true:NoExecute |
-| master-02 | 10.171.132.118 | Ubuntu 22.04.5 LTS | master | v1.29.12+rke2r1 | node-role.kubernetes.io/etcd=true:NoExecute |
-| master-03 | 10.171.132.119 | Ubuntu 22.04.5 LTS | master | v1.29.12+rke2r1 | node-role.kubernetes.io/etcd=true:NoExecute |
-| worker-01 | 10.171.132.120 | Ubuntu 22.04.5 LTS | worker | v1.29.12+rke2r1 | - |
-| worker-02| 10.171.132.121 | Ubuntu 22.04.5 LTS | worker | v1.29.12+rke2r1 | - |
-| worker-03 | 10.171.132.122 | Ubuntu 22.04.5 LTS | worker | v1.29.12+rke2r1 | - |
-| worker-04 | 10.171.132.123 | Ubuntu 22.04.5 LTS | worker | v1.29.12+rke2r1 | - |
-| worker-05 | 10.171.132.124 | Ubuntu 22.04.5 LTS | worker | v1.29.12+rke2r1 | - |
-| gpu-worker-01 | 10.171.132.132 | Ubuntu 22.04.5 LTS | worker | v1.29.12+rke2r1 | dedicated=gpu:NoSchedule | 
-| gpu-worker-01 | 10.171.132.133 | Ubuntu 22.04.5 LTS | worker | v1.29.12+rke2r1 | dedicated=gpu:NoSchedule |
+| Hostname | IP Address | OS | Role | RKE Version | GPU | Taint |
+| :--- | :--- | :--- | :--- | :--- | :--- | :--- |
+| master-01 | 10.171.132.117 | Ubuntu 22.04.5 LTS | master | v1.29.12+rke2r1 | N | node-role.kubernetes.io/etcd=true:NoExecute |
+| master-02 | 10.171.132.118 | Ubuntu 22.04.5 LTS | master | v1.29.12+rke2r1 | N | node-role.kubernetes.io/etcd=true:NoExecute |
+| master-03 | 10.171.132.119 | Ubuntu 22.04.5 LTS | master | v1.29.12+rke2r1 | N | node-role.kubernetes.io/etcd=true:NoExecute |
+| worker-01 | 10.171.132.120 | Ubuntu 22.04.5 LTS | worker | v1.29.12+rke2r1 | N | - |
+| worker-02| 10.171.132.121 | Ubuntu 22.04.5 LTS | worker | v1.29.12+rke2r1 | N | - |
+| worker-03 | 10.171.132.122 | Ubuntu 22.04.5 LTS | worker | v1.29.12+rke2r1 | N | - |
+| worker-04 | 10.171.132.123 | Ubuntu 22.04.5 LTS | worker | v1.29.12+rke2r1 | N | - |
+| worker-05 | 10.171.132.124 | Ubuntu 22.04.5 LTS | worker | v1.29.12+rke2r1 | N |  - |
+| gpu-worker-01 | 10.171.132.132 | Ubuntu 22.04.5 LTS | worker | v1.29.12+rke2r1 | Y | dedicated=gpu:NoSchedule | 
+| gpu-worker-01 | 10.171.132.133 | Ubuntu 22.04.5 LTS | worker | v1.29.12+rke2r1 | Y | dedicated=gpu:NoSchedule |
 
 ## Host OS requirements
 **GPU worker node attached 1 NVIDIA GPU. In this example, i have 2 gpu worker node attached one NVIDIA A30 for each.**
