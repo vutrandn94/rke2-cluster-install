@@ -6,7 +6,7 @@
 - [Lab info](#lab-info)
 - [Host OS requirements](#host-os-requirements)
 - [Prepare NVIDIA kernel drivers & libraries (Perform on all GPU worker nodes)](#prepare-nvidia-kernel-drivers--libraries-perform-on-all-gpu-worker-nodes)
-- [Verify kernel driver and & libraries was correctly installed after reboot (Perform on all GPU worker nodes)](verify-kernel-driver-and--libraries-was-correctly-installed-after-reboot-perform-on-all-gpu-worker-nodes)
+- [Verify kernel driver and libraries was correctly installed after reboot (Perform on all GPU worker nodes)](verify-kernel-driver-and--libraries-was-correctly-installed-after-reboot-perform-on-all-gpu-worker-nodes)
 ## Lab info
 | Hostname | IP Address | OS | Role | RKE Version | GPU | Taint |
 | :--- | :--- | :--- | :--- | :--- | :--- | :--- |
@@ -94,7 +94,7 @@ nvidia-utils-535/now 535.274.02-0ubuntu0.22.04.1 amd64 [installed,local]
 # reboot
 ```
 
-## Verify kernel driver and & libraries was correctly installed after reboot (Perform on all GPU worker nodes)
+## Verify kernel driver & libraries was correctly installed after reboot (Perform on all GPU worker nodes)
 > [!NOTE]
 > Require NVIDIA kernel and libnvidia-ml.so lib exist on server.
 
