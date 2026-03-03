@@ -14,3 +14,4 @@
 | Check cluster node certificate expire | [check-cert.sh](https://github.com/vutrandn94/rke2-cluster-install/blob/main/check-cert.sh) |
 | Install nerctl and set config to interact with image containerd (like as docker) | [install-nerctl.md](https://github.com/vutrandn94/rke2-cluster-install/blob/main/install-nerctl.md) |
 | RKE2 add-on GPU operators (NVIDIA operator allows administrators of Kubernetes clusters to manage GPUs just like CPUs) | [gpu-operators.md](https://github.com/vutrandn94/rke2-cluster-install/blob/main/gpu-operators.md) |
+| Divide NVIDIA GPU to many short resource part (single mode) | [gpu-operator-with-mig.md](https://github.com/vutrandn94/rke2-cluster-install/blob/main/gpu-operator-with-mig.md) | 
