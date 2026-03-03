@@ -104,7 +104,7 @@ time="2026-03-02T08:43:40Z" level=info msg="Waiting for change to 'nvidia.com/mi
 ```
 
 > [!NOTE]
-> Node labels "nvidia.com/mig.config=all-1g.6gb", "nvidia.com/mig.config.state=success" => Successfully updated to MIG profile config: all-1g.6gb
+> Node labels "nvidia.com/mig.config=all-1g.6gb", "nvidia.com/mig.config.state=success" => Successfully updated to MIG profile config "all-1g.6gb"
 
 ```
 # kubectl describe node gpu-worker-01 gpu-worker-02 | grep "mig"
