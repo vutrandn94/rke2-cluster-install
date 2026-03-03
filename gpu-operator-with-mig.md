@@ -10,7 +10,7 @@
 
 ## Start configuration
 > [!NOTE]
-> In this example, i have 2 gpu worker node attached one NVIDIA A30 (24GB VRAM) for each. I will action divide 1 GPU with 4 profile as 6GB VRAM**
+> **In this example, i have 2 gpu worker node attached one NVIDIA A30 (24GB VRAM) for each. I will action divide 1 GPU with 4 profile as 6GB VRAM**
 
 | Hostname | IP Address | OS | Role | RKE Version | GPU | Taint | GPU Profile |
 | :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- |
@@ -19,7 +19,7 @@
 
 
 > [!NOTE]
-> MIG Manager requires that no user workloads are running on the GPUs being configured. In some cases, the node may need to be rebooted, such as a CSP, so the node might need to be cordoned before changing the MIG mode or the MIG geometry on the GPUs.
+> **MIG Manager requires that no user workloads are running on the GPUs being configured. In some cases, the node may need to be rebooted, such as a CSP, so the node might need to be cordoned before changing the MIG mode or the MIG geometry on the GPUs**
 
 ```
 # nvidia-smi 
@@ -104,7 +104,7 @@ time="2026-03-02T08:43:40Z" level=info msg="Waiting for change to 'nvidia.com/mi
 ```
 
 > [!NOTE]
-> Node labels "nvidia.com/mig.config=all-1g.6gb", "nvidia.com/mig.config.state=success" => Successfully updated to MIG profile config "all-1g.6gb"
+> **Node labels "nvidia.com/mig.config=all-1g.6gb", "nvidia.com/mig.config.state=success" => Successfully updated to MIG profile config "all-1g.6gb"**
 
 ```
 # kubectl describe node gpu-worker-01 gpu-worker-02 | grep "mig"
@@ -250,7 +250,7 @@ Tue Mar  3 09:08:25 2026
 
 ## Run 1 workload test GPU allocate
 > [!NOTE]
-> Because we have 2 GPU NVIDIA A30 (24GB VRAM) divide with profile "all-1g.6gb" => we can get 8 part of 2 GPU. In this below workload, we'll schedule 10 replicas pod on Deployment and match case have 2 pod with "Pending" state (Because only available 8 GPU after divide resource)
+> **Because we have 2 GPU NVIDIA A30 (24GB VRAM) divide with profile "all-1g.6gb" => we can get 8 part of 2 GPU. In this below workload, we'll schedule 10 replicas pod on Deployment and match case have 2 pod with "Pending" state (Because only available 8 GPU after divide resource)**
 
 ```
 # vi test-gpu-deployment.yaml 
