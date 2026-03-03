@@ -24,7 +24,7 @@
 | worker-04 | 10.171.132.123 | Ubuntu 22.04.5 LTS | worker | v1.29.12+rke2r1 | N | - |
 | worker-05 | 10.171.132.124 | Ubuntu 22.04.5 LTS | worker | v1.29.12+rke2r1 | N |  - |
 | gpu-worker-01 | 10.171.132.132 | Ubuntu 22.04.5 LTS | worker | v1.29.12+rke2r1 | Y | dedicated=gpu:NoSchedule | 
-| gpu-worker-01 | 10.171.132.133 | Ubuntu 22.04.5 LTS | worker | v1.29.12+rke2r1 | Y | dedicated=gpu:NoSchedule |
+| gpu-worker-02 | 10.171.132.133 | Ubuntu 22.04.5 LTS | worker | v1.29.12+rke2r1 | Y | dedicated=gpu:NoSchedule |
 
 ## Host OS requirements
 **GPU worker node attached 1 NVIDIA GPU. In this example, i have 2 gpu worker node attached one NVIDIA A30 for each.**
