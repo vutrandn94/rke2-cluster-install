@@ -15,7 +15,7 @@
 | Hostname | IP Address | OS | Role | RKE Version | GPU | Taint | GPU Profile |
 | :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- |
 | gpu-worker-01 | 10.171.132.132 | Ubuntu 22.04.5 LTS | worker | v1.29.12+rke2r1 | 1 | dedicated=gpu:NoSchedule | all-1g.6gb |
-| gpu-worker-01 | 10.171.132.133 | Ubuntu 22.04.5 LTS | worker | v1.29.12+rke2r1 | 1 | dedicated=gpu:NoSchedule | all-1g.6gb |
+| gpu-worker-02 | 10.171.132.133 | Ubuntu 22.04.5 LTS | worker | v1.29.12+rke2r1 | 1 | dedicated=gpu:NoSchedule | all-1g.6gb |
 
 
 > [!NOTE]
