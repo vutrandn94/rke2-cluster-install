@@ -1,10 +1,12 @@
 # Divide NVIDIA GPU to many short resource part (single mode)
 
 > [!NOTE]
-> First, let's reference and perform steps like this turtorial https://github.com/vutrandn94/rke2-cluster-install/blob/main/gpu-operators.md
+> First, let's reference and perform steps like this turtorial https://github.com/vutrandn94/rke2-cluster-install/blob/main/gpu-operators.md and https://docs.nvidia.com/datacenter/cloud-native/gpu-operator/latest/gpu-operator-mig.html#about-multi-instance-gpu
 
 ## Menu
--
+- [Start configuration](#start-configuration)
+- [Recheck on GPU worker node](#recheck-on-gpu-worker-node)
+- [Run 1 workload test GPU allocate](#run-1-workload-test-gpu-allocate)
 
 ## Start configuration
 > [!NOTE]
